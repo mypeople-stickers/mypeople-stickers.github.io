@@ -2472,7 +2472,7 @@ $(document).ready(function() {
     var btn   = $(this);
     var group = btn.text();
     btn.next().html(data[group].map(function(png) {
-      return '<img src="' + png + '"/>';
+      return '<img src="' + png + '" width="50%"/>';
     }).join("\n"));
   });
 });
