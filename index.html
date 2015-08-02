@@ -7,9 +7,9 @@
   <title>마이피플</title>
   <style>
     button {
-      display:       block;
-      cursor:        pointer;
-      font-size:     1em;
+      display:   block;
+      cursor:    pointer;
+      font-size: 1em;
     }
 
     .myButton {
@@ -60,7 +60,6 @@
   </style>
 </head>
 <body>
-
 <img src="icons/001.png"/>
 <img src="icons/002.png"/>
 <img src="icons/003.png"/>
@@ -200,35 +199,35 @@
 <img src="icons/imo_48.png"/>
 <img src="icons/imo_49.png"/>
 <img src="icons/imo_50.png"/>
-
-<button class="myButton">everland</button><div></div>
-<button class="myButton">kitty_daniel</button><div></div>
-<button class="myButton">kitty_vacation</button><div></div>
-<button class="myButton">sticker</button><div></div>
-<button class="myButton">sticker (2)</button><div></div>
-<button class="myButton">sticker (3)</button><div></div>
-<button class="myButton">sticker (4)</button><div></div>
-<button class="myButton">sticker (5)</button><div></div>
-<button class="myButton">sticker (6)</button><div></div>
-<button class="myButton">sticker (7)</button><div></div>
-<button class="myButton">sticker (8)</button><div></div>
-<button class="myButton">sticker (9)</button><div></div>
-<button class="myButton">sticker (10)</button><div></div>
-<button class="myButton">sticker (11)</button><div></div>
-<button class="myButton">sticker (12)</button><div></div>
-<button class="myButton">sticker (13)</button><div></div>
-<button class="myButton">sticker (14)</button><div></div>
-<button class="myButton">sticker (15)</button><div></div>
-<button class="myButton">sticker (16)</button><div></div>
-<button class="myButton">sticker (17)</button><div></div>
-<button class="myButton">sticker (18)</button><div></div>
-<button class="myButton">sticker (19)</button><div></div>
-<button class="myButton">sticker (20)</button><div></div>
-<button class="myButton">sticker (21)</button><div></div>
-<button class="myButton">sticker (22)</button><div></div>
-<button class="myButton">sticker (23)</button><div></div>
-<button class="myButton">valentine</button><div></div>
-<button class="myButton">whiteday</button><div></div>
+<button class="myButton" id="open">open all groups</button><div></div>
+<button class="myButton group">everland</button><div></div>
+<button class="myButton group">kitty_daniel</button><div></div>
+<button class="myButton group">kitty_vacation</button><div></div>
+<button class="myButton group">sticker</button><div></div>
+<button class="myButton group">sticker (2)</button><div></div>
+<button class="myButton group">sticker (3)</button><div></div>
+<button class="myButton group">sticker (4)</button><div></div>
+<button class="myButton group">sticker (5)</button><div></div>
+<button class="myButton group">sticker (6)</button><div></div>
+<button class="myButton group">sticker (7)</button><div></div>
+<button class="myButton group">sticker (8)</button><div></div>
+<button class="myButton group">sticker (9)</button><div></div>
+<button class="myButton group">sticker (10)</button><div></div>
+<button class="myButton group">sticker (11)</button><div></div>
+<button class="myButton group">sticker (12)</button><div></div>
+<button class="myButton group">sticker (13)</button><div></div>
+<button class="myButton group">sticker (14)</button><div></div>
+<button class="myButton group">sticker (15)</button><div></div>
+<button class="myButton group">sticker (16)</button><div></div>
+<button class="myButton group">sticker (17)</button><div></div>
+<button class="myButton group">sticker (18)</button><div></div>
+<button class="myButton group">sticker (19)</button><div></div>
+<button class="myButton group">sticker (20)</button><div></div>
+<button class="myButton group">sticker (21)</button><div></div>
+<button class="myButton group">sticker (22)</button><div></div>
+<button class="myButton group">sticker (23)</button><div></div>
+<button class="myButton group">valentine</button><div></div>
+<button class="myButton group">whiteday</button><div></div>
 <script>
 $(document).ready(function() {
   var data = {
@@ -2609,12 +2608,15 @@ $(document).ready(function() {
     "png/whiteday_10.png"
   ]
 }
-  $("button").click(function() {
+  $(".group").click(function() {
     var btn   = $(this);
     var group = btn.text();
     btn.next().html(data[group].map(function(png) {
       return '<img src="' + png + '"/>';
     }).join("\n"));
+  });
+  $("#open").click(function() {
+    $(".group").click();
   });
 });
 </script>
